@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "128067449633",
+    "firebase_url": "https://airpedia-11033-default-rtdb.firebaseio.com",
+    "project_id": "airpedia-11033",
+    "storage_bucket": "airpedia-11033.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128067449633:android:15f36d43d12735870d4460",
+        "android_client_info": {
+          "package_name": "com.example.airpedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128067449633-8qe1cg21bfn21rdftjk2pu42v5bfggqi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.airpedia",
+            "certificate_hash": "9b04bca5c01e9fdbb9d4214b7fb1344b8c9322cb"
+          }
+        },
+        {
+          "client_id": "128067449633-pd5murieg7qkiuh37h3stbeahl30ig27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtbIRKZsSyW8uwrRnxMQYZh6GGLxiKT5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128067449633-pd5murieg7qkiuh37h3stbeahl30ig27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "128067449633",
+    "project_id": "airpedia-11033",
+    "storage_bucket": "airpedia-11033.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128067449633:android:15f36d43d12735870d4460",
+        "android_client_info": {
+          "package_name": "com.example.airpedia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtbIRKZsSyW8uwrRnxMQYZh6GGLxiKT5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
