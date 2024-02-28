@@ -22,6 +22,7 @@ abstract class Routes {
   static const PIN = _Paths.PIN;
   static const TICKET_DETAIL = _Paths.TICKET_DETAIL;
   static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
+  static const ADMINLOGIN = _Paths.ADMINLOGIN;
 }
 
 abstract class _Paths {
@@ -43,4 +44,5 @@ abstract class _Paths {
   static const PIN = '/pin';
   static const TICKET_DETAIL = '/ticket-detail';
   static const EDIT_PROFILE = '/edit-profile';
+  static const ADMINLOGIN = '/adminlogin';
 }

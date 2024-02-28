@@ -82,4 +82,5 @@ class UtilityController extends GetxController {
       Locale(value.locale.languageCode, value.locale.countryCode),
     );
   }
+
 }

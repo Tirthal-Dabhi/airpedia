@@ -1,3 +1,5 @@
+import 'package:airpedia/app/modules/adminlogin/binding/adminlogin_bindings.dart';
+import 'package:airpedia/app/modules/adminlogin/views/adminlogin_view.dart';
 import 'package:airpedia/app/modules/api_log/bindings/api_log_binding.dart';
 import 'package:airpedia/app/modules/api_log/views/api_log_view.dart';
 import 'package:airpedia/app/modules/blocked_view.dart';
@@ -117,6 +119,11 @@ class AppPages {
       name: _Paths.EDIT_PROFILE,
       page: () => const EditProfileView(),
       binding: EditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADMINLOGIN,
+      page: () => const AdminloginView(),
+      binding: AdminloginBinding(),
     ),
   ];
 }
