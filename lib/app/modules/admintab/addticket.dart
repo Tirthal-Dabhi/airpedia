@@ -1,12 +1,10 @@
-import 'package:airpedia/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class addticket extends StatefulWidget {
-   addticket({Key? key}) : super(key: key);
+   const addticket({super.key});
 
   @override
   State<addticket> createState() => _addticketState();
@@ -55,7 +53,7 @@ class _addticketState extends State<addticket> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text("Add Ticket",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         ),
         backgroundColor: Colors.deepPurple,
@@ -71,7 +69,7 @@ class _addticketState extends State<addticket> {
                       Container(
                         height: 540,
                         width: 300,
-                        padding: EdgeInsets.symmetric(vertical: 30),
+                        padding: const EdgeInsets.symmetric(vertical: 30),
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Colors.deepPurple,
@@ -84,7 +82,7 @@ class _addticketState extends State<addticket> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Text("FLIGHT DETAILS",style: TextStyle(color: Colors.deepPurple,
+                            const Text("FLIGHT DETAILS",style: TextStyle(color: Colors.deepPurple,
                                 fontSize: 20,fontWeight: FontWeight.bold),),
                             Padding(
                               padding: const EdgeInsets.all(17.0),
@@ -94,7 +92,7 @@ class _addticketState extends State<addticket> {
                                 child: TextField(
                                   controller: Flightinput,
                                   keyboardType: TextInputType.text,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.deepPurpleAccent
                                   ),
                                   decoration: InputDecoration(
@@ -112,7 +110,7 @@ class _addticketState extends State<addticket> {
                               width: 230,
                               child: Container(
                                 child: TextFormField(
-                                  style: TextStyle(color: Colors.deepPurpleAccent),
+                                  style: const TextStyle(color: Colors.deepPurpleAccent),
                                   decoration: const InputDecoration(
                                       hintText: 'Date',
                                       hintStyle: TextStyle(color: Colors.black45),
@@ -135,7 +133,7 @@ class _addticketState extends State<addticket> {
                                         lastDate: DateTime(2050),
                                         builder: (context, child){
                                           return Theme(data: Theme.of(context).copyWith(
-                                            colorScheme: ColorScheme.light(
+                                            colorScheme: const ColorScheme.light(
                                               primary: Colors.deepPurpleAccent,
                                               onPrimary: Colors.white,
                                               onSurface: Colors.black,
@@ -169,7 +167,7 @@ class _addticketState extends State<addticket> {
                                 child: Container(
                                   //height: MediaQuery.of(context).size.width / 3,
                                   child: TextField(
-                                    style: TextStyle(color: Colors.deepPurpleAccent),
+                                    style: const TextStyle(color: Colors.deepPurpleAccent),
                                     controller: timeinput, //editing controller of this TextField
                                     decoration: const InputDecoration(
                                         hintText: 'Time',
@@ -188,12 +186,12 @@ class _addticketState extends State<addticket> {
                                     readOnly: true,  //set it true, so that user will not able to edit text
                                     onTap: () async {
                                       TimeOfDay? pickedTime =  await showTimePicker(
-                                          initialTime: TimeOfDay(hour: 12,minute: 00),
+                                          initialTime: const TimeOfDay(hour: 12,minute: 00),
                                           context: context,
                                           builder: (context, child)
                                           {
                                             return Theme(data: Theme.of(context).copyWith(
-                                              colorScheme: ColorScheme.light(
+                                              colorScheme: const ColorScheme.light(
                                                 primary: Colors.deepPurpleAccent,
                                                 onPrimary: Colors.white,
                                                 onSurface: Colors.black,
@@ -234,7 +232,7 @@ class _addticketState extends State<addticket> {
                               child: TextField(
                                 controller: priceinput,
                                 keyboardType: TextInputType.number,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.deepPurpleAccent
                                 ),
                                 decoration: InputDecoration(
@@ -255,8 +253,8 @@ class _addticketState extends State<addticket> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
+                                    const Padding(
+                                      padding: EdgeInsets.all(5.0),
                                       child: Expanded(child: Text("OriginAirport")),
                                     ),
                                     Padding(
@@ -358,8 +356,8 @@ class _addticketState extends State<addticket> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                  const Padding(
+                                    padding: EdgeInsets.all(8.0),
                                     child: Expanded(child: SizedBox(
                                       height: 50,
                                         width: 80,
@@ -454,7 +452,7 @@ class _addticketState extends State<addticket> {
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             SizedBox(
@@ -491,9 +489,9 @@ class _addticketState extends State<addticket> {
                               },
                                   style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple,
                                   elevation: 12.0,
-                                    textStyle: TextStyle(color: Colors.white,)
+                                    textStyle: const TextStyle(color: Colors.white,)
                                   ),
-                                  child: Text("Add",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),
+                                  child: const Text("Add",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),
                                   ),
                               ),
                             ),
