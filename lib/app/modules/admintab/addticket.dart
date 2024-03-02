@@ -207,7 +207,7 @@ class _addticketState extends State<addticket> {
                                       );
 
                                       if(pickedTime != null ){
-                                        //print(pickedTime.format(context));   //output 10:51 PM
+                                        print(pickedTime.format(context));   //output 10:51 PM
                                         DateTime parsedTime = DateFormat.jm().parse(pickedTime.format(context).toString());
                                         //converting to DateTime so that we can further format on different pattern.
                                         print(parsedTime); //output 1970-01-01 22:53:00.000
