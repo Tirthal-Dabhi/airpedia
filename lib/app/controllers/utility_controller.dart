@@ -67,20 +67,20 @@ class UtilityController extends GetxController {
     }
   }
 
-  Future<void> changeLanguage(AppLanguageModel value) async {
-    appLanguage.value = value;
-
-    final data = {
-      'language': value.language,
-      'language_code': value.locale.languageCode,
-      'country_code': value.locale.countryCode,
-    };
-
-    await AppStorage.write(key: APP_LANGUAGE, value: jsonEncode(data));
-
-    await Get.updateLocale(
-      Locale(value.locale.languageCode, value.locale.countryCode),
-    );
-  }
+  // Future<void> changeLanguage(AppLanguageModel value) async {
+  //   appLanguage.value = value;
+  //
+  //   final data = {
+  //     // 'language': value.language,
+  //     // 'language_code': value.locale.languageCode,
+  //     // 'country_code': value.locale.countryCode,
+  //   };
+  //
+  //   await AppStorage.write(key: APP_LANGUAGE, value: jsonEncode(data));
+  //
+  //   await Get.updateLocale(
+  //     Locale(value.locale.languageCode, value.locale.countryCode),
+  //   );
+  // }
 
 }

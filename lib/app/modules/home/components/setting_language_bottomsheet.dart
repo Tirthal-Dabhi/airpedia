@@ -29,7 +29,7 @@ class SettingLanguageBottomsheet extends GetView<SettingController> {
               isSelected: item.language ==
                   controller.cUtility.appLanguage.value.language,
               onTap: () {
-                controller.cUtility.changeLanguage(item);
+                // controller.cUtility.changeLanguage(item);
                 Get.back();
               },
             );

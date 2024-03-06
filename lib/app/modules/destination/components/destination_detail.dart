@@ -61,7 +61,7 @@ class DestinationDetail extends StatelessWidget {
             itemBuilder: (context, index) {
               return Row(
                 children: [
-                  Image.asset(AppAsset.icon('ic_check.png'), width: 16.w),
+                  Image.asset(AppAsset.icon('ic_check.png'), width: 15.w),
                   horizontalSpace(Insets.xs),
                   Text(
                     data.interests[index].toString().tr,

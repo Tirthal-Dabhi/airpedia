@@ -1,6 +1,3 @@
-// Recommended destination = [Lombok, Bandung, Yogyakarta, Surabaya, Jakarta]
-// New destination = [Ambon, Papua, Bali, Padang, Makassar]
-
 import 'package:get/get.dart';
 
 Map<String, dynamic> destinationTicketData = {

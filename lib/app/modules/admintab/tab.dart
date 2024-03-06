@@ -2,6 +2,7 @@
 import 'package:airpedia/app/models/ticket_model.dart';
 import 'package:airpedia/app/modules/admintab/addticket.dart';
 import 'package:airpedia/app/modules/admintab/admindata.dart';
+import 'package:airpedia/app/modules/admintab/combinetab.dart';
 import 'package:airpedia/app/modules/admintab/setting.dart';
 import 'package:airpedia/main.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +18,7 @@ class admintab extends StatefulWidget {
 class _admintabState extends State<admintab> {
   List pages = [
     addticket(),
-    admindata(),
+    combinetab(),
     asetting(),
   ];
   int currentIndex=0;
