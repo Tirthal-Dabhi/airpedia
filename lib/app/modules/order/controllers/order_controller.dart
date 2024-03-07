@@ -32,8 +32,8 @@ class OrderController extends GetxController {
   void onInit() {
     departureSchedule.value = DateFormat('yyyy-MM-dd hh:mm')
         .parse(
-          '${cDestination.dateDaparture.year}-${cDestination.dateDaparture.month}-${cDestination.dateDaparture.day} ${cDestination.destinationTicket.value.departureSchedule}',
-        )
+      '${cDestination.dateDaparture.year}-${cDestination.dateDaparture.month}-${cDestination.dateDaparture.day} ${cDestination.destinationTicket.value.departureSchedule}',
+    )
         .millisecondsSinceEpoch;
     getSeat();
     super.onInit();
@@ -96,9 +96,9 @@ class OrderController extends GetxController {
     try {
       isLoading(true);
       final collectionTicketTransaction =
-          FirebaseFirestore.instance.collection('ticket_transactions');
+      FirebaseFirestore.instance.collection('ticket_transactions');
       final collectionTransaction =
-          FirebaseFirestore.instance.collection('transactions');
+      FirebaseFirestore.instance.collection('transactions');
 
       await Future.delayed(const Duration(seconds: 2));
 
@@ -106,19 +106,21 @@ class OrderController extends GetxController {
         'destination': cDestination.data.value.toJson(),
         'ticket': cDestination.destinationTicket.value.toJson(),
         'departure_schedule': departureSchedule.value,
+        'arriving_date': cDestination.cDateDeparture.text.trim(),
         'transaction_date': DateTime.now().millisecondsSinceEpoch,
         'total_passenger': selectedSeat.length,
         'selected_seat':
-            selectedSeat.map((item) => item.name).toList().join(', '),
+        selectedSeat.map((item) => item.name).toList().join(', '),
         'total': total.value,
         'ref_number': 'TRX${DateTime.now().millisecondsSinceEpoch}',
         'user_id': cUserInfo.dataUser.value.userId,
+        "user_name" : cUserInfo.dataUser.value.fullName,
       });
 
       await collectionTransaction.add({
         'transaction_type': 'Ticket',
         'title':
-            'Ticket ${cDestination.destinationTicket.value.airlineName} : ${cDestination.destinationTicket.value.airportDepartureCode.toUpperCase()} - ${cDestination.destinationTicket.value.airportArrivalCode.toUpperCase()}',
+        'Ticket ${cDestination.destinationTicket.value.airlineName} : ${cDestination.destinationTicket.value.airportDepartureCode.toUpperCase()} - ${cDestination.destinationTicket.value.airportArrivalCode.toUpperCase()}',
         'amount': total.value,
         'transaction_date': DateTime.now().millisecondsSinceEpoch,
         'user_id': cUserInfo.dataUser.value.userId,

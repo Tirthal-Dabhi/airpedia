@@ -495,7 +495,7 @@ class Locales {
     'cardHolder': 'Card Holder',
     'cardId': 'Card ID',
     'update': 'Update',
-    'updateProfileSuccess': 'Your profile has been succesfully updated',
+    'updateProfileSuccess': 'Your profile has been successfully updated',
     'recommended': 'Recommended',
     'newThisYear': 'New This Year',
     'whereToFlightToday': 'Where to flight today ?',

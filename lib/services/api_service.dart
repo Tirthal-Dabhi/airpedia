@@ -105,7 +105,7 @@ class ApiService {
       } else if (response.statusCode == 500) {
         throw Exception('Server Error');
       } else {
-        throw Exception("Something does wen't wrong");
+        throw Exception("Something went wrong");
       }
     } on SocketException catch (e) {
       logSys(e.toString());
