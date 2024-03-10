@@ -113,7 +113,7 @@ class OrderController extends GetxController {
         selectedSeat.map((item) => item.name).toList().join(', '),
         'total': total.value,
         'ref_number': 'TRX${DateTime.now().millisecondsSinceEpoch}',
-        'user_id': cUserInfo.dataUser.value.userId,
+       // 'user_id': cUserInfo.dataUser.value.userId,
         "user_name" : cUserInfo.dataUser.value.fullName,
       });
 
