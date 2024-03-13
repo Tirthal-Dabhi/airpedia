@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:ui';
 
-import 'package:airpedia/app/data/app_language_data.dart';
 import 'package:airpedia/app/models/app_language_model.dart';
 import 'package:airpedia/constants/constant.dart';
 import 'package:airpedia/utils/app_storage.dart';
@@ -19,7 +18,6 @@ class UtilityController extends GetxController {
   void onInit() {
     initData();
     getAppVersion();
-  //  getAppLanguageOptions();
     super.onInit();
   }
 
@@ -41,46 +39,4 @@ class UtilityController extends GetxController {
     await AppStorage.delete(key: LOG_BUTTON);
     isShowLog(false);
   }
-
-  // Future<void> getAppLanguageOptions() async {
-  //   appLanguageOptions(
-  //     RxList.from(appLanguageData.map(AppLanguageModel.fromJson)),
-  //   );
-  // }
-
-  Future<void> getAppLanguage() async {
-    final data = await AppStorage.read(key: APP_LANGUAGE);
-
-    if (data.isNotEmpty) {
-      final value = jsonDecode(data);
-
-      appLanguage.value = AppLanguageModel(
-        language: value['language'],
-        locale: Locale(value['language_code'], value['country_code']),
-      );
-
-      await Get.updateLocale(
-        Locale(value['language_code'], value['country_code']),
-      );
-    } else {
-      await Get.updateLocale(const Locale('en', 'US'));
-    }
-  }
-
-  // Future<void> changeLanguage(AppLanguageModel value) async {
-  //   appLanguage.value = value;
-  //
-  //   final data = {
-  //     // 'language': value.language,
-  //     // 'language_code': value.locale.languageCode,
-  //     // 'country_code': value.locale.countryCode,
-  //   };
-  //
-  //   await AppStorage.write(key: APP_LANGUAGE, value: jsonEncode(data));
-  //
-  //   await Get.updateLocale(
-  //     Locale(value.locale.languageCode, value.locale.countryCode),
-  //   );
-  // }
-
 }

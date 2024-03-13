@@ -122,7 +122,7 @@ class _userdataState extends State<userdata> {
                                           .spaceAround,
                                       children: [
                                         Text(snapshot.data!
-                                            .docs[index]['destination']['airport_destination_name']
+                                            .docs[index]['ticket']['airport_departure_location']
                                             .toString(),
                                           style: TextStyle(
                                               color: Colors.black,
@@ -131,17 +131,17 @@ class _userdataState extends State<userdata> {
                                         Row(
                                           children: [
                                             //Icon(Icons.flight_takeoff_rounded,size: 30,)
-                                            Text("Duration", style: TextStyle(
+                                            Text("To", style: TextStyle(
                                                 fontSize: 17,
                                                 color: Colors.black),),
-                                            Icon(Icons.flight_takeoff_rounded,
-                                              color: Colors.deepPurple,)
+                                           /* Icon(Icons.flight_takeoff_rounded,
+                                              color: Colors.deepPurple,)*/
                                           ],
                                         ),
                                         Row(
                                           children: [
                                             Text(snapshot.data!
-                                                .docs[index]['destination']['destination_name']
+                                                .docs[index]['ticket']['airport_arrival_location']
                                                 .toString(),
                                               style: TextStyle(
                                                   color: Colors.black,

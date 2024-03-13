@@ -27,6 +27,7 @@ class NewDestination extends GetView<HomeController> {
                 NewDestinationShimmerItem(),
                 NewDestinationShimmerItem(),
                 NewDestinationShimmerItem(),
+               // NewDestinationShimmerItem(),
               ],
             )
           else if (controller.listNewDestination.isEmpty)

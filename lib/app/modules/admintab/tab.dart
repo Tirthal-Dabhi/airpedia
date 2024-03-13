@@ -1,11 +1,7 @@
-
-import 'package:airpedia/app/models/ticket_model.dart';
+import 'package:airpedia/app/modules/admintab/addlocation.dart';
 import 'package:airpedia/app/modules/admintab/addticket.dart';
-import 'package:airpedia/app/modules/admintab/admindata.dart';
 import 'package:airpedia/app/modules/admintab/combinetab.dart';
 import 'package:airpedia/app/modules/admintab/setting.dart';
-import 'package:airpedia/main.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class admintab extends StatefulWidget {
@@ -18,20 +14,21 @@ class admintab extends StatefulWidget {
 class _admintabState extends State<admintab> {
   List pages = [
     addticket(),
+  //  addlocation(),
     combinetab(),
     asetting(),
   ];
-  int currentIndex=0;
-  void onTap(int index){
+  int currentIndex = 0;
+
+  void onTap(int index) {
     setState(() {
       currentIndex = index;
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -43,10 +40,36 @@ class _admintabState extends State<admintab> {
         showUnselectedLabels: false,
         showSelectedLabels: true,
         elevation: 0,
-        items:  [
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.deepPurpleAccent,size: 35),label:'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.airplane_ticket_outlined,color: Colors.deepPurpleAccent,size: 35),label:'TicketData'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings_outlined,color: Colors.deepPurpleAccent,size: 35),label:'Setting'),
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+                color: Colors.deepPurpleAccent,
+                size: 35,
+              ),
+              label: 'Home'),
+        /*  BottomNavigationBarItem(
+            icon: Icon(
+              Icons.place_outlined,
+              color: Colors.deepPurpleAccent,
+              size: 35,
+            ),
+            label: 'Add Location'
+          ),*/
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.airplane_ticket_outlined,
+                color: Colors.deepPurpleAccent,
+                size: 35,
+              ),
+              label: 'TicketData'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.settings_outlined,
+                color: Colors.deepPurpleAccent,
+                size: 35,
+              ),
+              label: 'Setting'),
         ],
       ),
     );

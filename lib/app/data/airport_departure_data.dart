@@ -26,12 +26,12 @@ const List<Map<String, dynamic>> airportDepartureData = [
   },
   {
     'code': 'kpd',
-    'name': 'calicut internation airport',
+    'name': 'calicut airport',
     'location': 'calicut',
   },
   {
     'code': 'an',
-    'name': 'veer savarkar international airport',
+    'name': 'veer savarkar airport',
     'location': 'port blair',
   },
   {
@@ -41,7 +41,7 @@ const List<Map<String, dynamic>> airportDepartureData = [
   },
   {
     'code': 'trk',
-    'name': 'goa mopa airport',
+    'name': 'goa airport',
     'location': 'goa',
   },
   {

@@ -2,7 +2,6 @@ import 'package:airpedia/app/modules/admintab/admindata.dart';
 import 'package:airpedia/app/modules/admintab/userdata.dart';
 import 'package:airpedia/app/modules/home/components/ticket_tabbar.dart';
 import 'package:airpedia/app/modules/home/components/ticket_tabbar_item.dart';
-import 'package:airpedia/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
 
