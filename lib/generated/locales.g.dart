@@ -4,7 +4,6 @@
 // ignore: avoid_classes_with_only_static_members
 class AppTranslation {
   static Map<String, Map<String, String>> translations = {
-    //'id_ID': Locales.id_ID,
     'en_US': Locales.en_US,
   };
 }

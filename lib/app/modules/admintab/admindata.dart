@@ -11,6 +11,7 @@ class admindata extends StatefulWidget {
 class _admindataState extends State<admindata> {
   final auth = FirebaseFirestore.instance ;
   final fireStore = FirebaseFirestore.instance.collection('dataupload').snapshots();
+  CollectionReference ref = FirebaseFirestore.instance.collection('dataupload');
 
   @override
   Widget build(BuildContext context) {
@@ -132,7 +133,22 @@ class _admindataState extends State<admindata> {
                           ],
                         ),
                       ),
-
+                      Column(
+                        children: [
+                          Center(
+                            child: ElevatedButton.icon(
+                              onPressed: () {
+                                ref.doc(snapshot.data!.docs[index]['id'].toString()).delete();
+                              },
+                              icon: Icon( // <-- Icon
+                                Icons.delete_outline_outlined,
+                                size: 24.0,
+                              ),
+                              label: Text('DELETE'), // <-- Text
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

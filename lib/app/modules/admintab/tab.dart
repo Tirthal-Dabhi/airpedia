@@ -14,7 +14,7 @@ class admintab extends StatefulWidget {
 class _admintabState extends State<admintab> {
   List pages = [
     addticket(),
-  //  addlocation(),
+    addlocation(),
     combinetab(),
     asetting(),
   ];
@@ -48,14 +48,14 @@ class _admintabState extends State<admintab> {
                 size: 35,
               ),
               label: 'Home'),
-        /*  BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               Icons.place_outlined,
               color: Colors.deepPurpleAccent,
               size: 35,
             ),
             label: 'Add Location'
-          ),*/
+          ),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.airplane_ticket_outlined,

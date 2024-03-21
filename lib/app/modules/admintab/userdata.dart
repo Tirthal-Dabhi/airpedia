@@ -11,8 +11,9 @@ class userdata extends StatefulWidget {
 class _userdataState extends State<userdata> {
   final auth = FirebaseFirestore.instance;
 
-  final fireStore = FirebaseFirestore.instance.collection('ticket_transactions')
-      .snapshots();
+  final fireStore = FirebaseFirestore.instance.collection('ticket_transactions').snapshots();
+
+  CollectionReference ref = FirebaseFirestore.instance.collection('ticket_transactions');
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +56,8 @@ class _userdataState extends State<userdata> {
                                           .spaceAround,
                                       children: [
                                         Text(
-                                          snapshot.data!
-                                              .docs[index]['user_name']
-                                              .toString(),
-                                          style: TextStyle(
+                                          snapshot.data!.docs[index]['user_name'].toString(),
+                                          style: const TextStyle(
                                               color: Colors.deepPurpleAccent,
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold),),
@@ -85,29 +84,29 @@ class _userdataState extends State<userdata> {
                                       mainAxisAlignment: MainAxisAlignment
                                           .center,
                                       children: [
-                                        Text('Flightname:-', style: TextStyle(
+                                        Text('Flight:-', style: TextStyle(
                                             color: Colors.black,
-                                            fontSize: 17),),
+                                            fontSize: 15),),
                                         Text(snapshot.data!
                                             .docs[index]['ticket']['airline_name']
                                             .toString(),
                                           style: TextStyle(
-                                            color: Colors.black, fontSize: 17,),
+                                            color: Colors.black, fontSize: 15,),
                                         ),
-                                        SizedBox(width: 20,),
+                                        //SizedBox(width: 10,),
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: Row(
                                             children: [
-                                              Text('Seatno:-', style: TextStyle(
+                                              Text('Country:-', style: TextStyle(
                                                   color: Colors.black,
-                                                  fontSize: 17),),
+                                                  fontSize: 15),),
                                               Text(snapshot.data!
-                                                  .docs[index]['selected_seat']
+                                                  .docs[index]['destination']['country']
                                                   .toString(),
                                                 style: TextStyle(
                                                     color: Colors.black,
-                                                    fontSize: 17),
+                                                    fontSize: 15),
                                               ),
                                             ],
                                           ),
@@ -119,33 +118,37 @@ class _userdataState extends State<userdata> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment
-                                          .spaceAround,
+                                          .center,
                                       children: [
-                                        Text(snapshot.data!
-                                            .docs[index]['ticket']['airport_departure_location']
-                                            .toString(),
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 17),
+                                        SizedBox(
+                                          child: Text(snapshot.data!
+                                              .docs[index]['ticket']['airport_departure_location']
+                                              .toString(),
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 15),
+                                          ),
                                         ),
+                                        SizedBox(width: 15,),
                                         Row(
                                           children: [
                                             //Icon(Icons.flight_takeoff_rounded,size: 30,)
-                                            Text("To", style: TextStyle(
-                                                fontSize: 17,
+                                            Text("Duration", style: TextStyle(
+                                                fontSize: 16,
                                                 color: Colors.black),),
-                                           /* Icon(Icons.flight_takeoff_rounded,
-                                              color: Colors.deepPurple,)*/
+                                            Icon(Icons.flight_takeoff_rounded,
+                                              color: Colors.deepPurple,)
                                           ],
                                         ),
+                                        SizedBox(width: 15,),
                                         Row(
                                           children: [
                                             Text(snapshot.data!
-                                                .docs[index]['ticket']['airport_arrival_location']
+                                                .docs[index]['destination']['destination_name']
                                                 .toString(),
                                               style: TextStyle(
                                                   color: Colors.black,
-                                                  fontSize: 17),
+                                                  fontSize: 15),
                                             ),
                                           ],
                                         ),
@@ -157,16 +160,17 @@ class _userdataState extends State<userdata> {
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Text('Country:-', style: TextStyle(
+                                        Text('Seatno:-', style: TextStyle(
                                             color: Colors.black,
-                                            fontSize: 17),),
+                                            fontSize: 15),),
                                         Text(snapshot.data!
-                                            .docs[index]['destination']['country']
+                                            .docs[index]['selected_seat']
                                             .toString(),
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 17),
+                                              fontSize: 15),
                                         ),
+
                                         SizedBox(width: 10,),
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
@@ -174,14 +178,13 @@ class _userdataState extends State<userdata> {
                                             children: [
                                               Text('Price:-', style: TextStyle(
                                                   color: Colors.black,
-                                                  fontSize: 17),),
+                                                  fontSize: 15),),
                                               Text(snapshot.data!
                                                   .docs[index]['total']
                                                   .toString(),
                                                 style: TextStyle(
                                                     color: Colors.black,
-                                                    fontSize: 17),
-
+                                                    fontSize: 15),
                                               ),
                                             ],
                                           ),
@@ -189,6 +192,23 @@ class _userdataState extends State<userdata> {
                                       ],
                                     ),
                                   ),
+                                  // Row(
+                                  //   mainAxisAlignment: MainAxisAlignment.center,
+                                  //   children: [
+                                  //     Center(
+                                  //       child: ElevatedButton.icon(
+                                  //         onPressed: () {
+                                  //           ref.doc(snapshot.data!.docs[index]['departure_schedule'].toString()).delete();
+                                  //         },
+                                  //         icon: Icon(
+                                  //           Icons.delete_outline_outlined,
+                                  //           size: 24.0,
+                                  //         ),
+                                  //         label: Text('DELETE'),
+                                  //       ),
+                                  //     ),
+                                  //   ],
+                                  // ),
                                 ],
                               ),
                             ),
@@ -203,41 +223,5 @@ class _userdataState extends State<userdata> {
           ],
         ),
       );
-    /////
-    // Scaffold(
-    //   body: Center(
-    //     child: Column(
-    //       children: [
-    //         TicketWidget(
-    //           width: 350,
-    //           height: 200,
-    //           color: Colors.cyan,
-    //           isCornerRounded: true,
-    //           padding: EdgeInsets.all(20),
-    //           child: Column(
-    //             children: [
-    //               Row(
-    //                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-    //                 children: [
-    //                   Text("name"),
-    //                   Row(
-    //                     children: [
-    //                       Text("date"),
-    //                     ],
-    //                   ),
-    //                 ],
-    //               ),
-    //               Column(
-    //                 children: [
-    //                   Text("flightname"),
-    //                 ],
-    //               ),
-    //             ],
-    //           ),
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }
