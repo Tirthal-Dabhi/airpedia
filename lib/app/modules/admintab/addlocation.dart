@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -22,7 +23,7 @@ class _addlocationState extends State<addlocation> {
   TextEditingController attractionc3 = TextEditingController();
   TextEditingController attractionc4 = TextEditingController();
   File? pickedImage;
-  final String _error = 'No Error Dectected';
+  String _error = 'No Error Dectected';
   List<XFile>? imageFileList = [];
   List<String> downloadUrls = [];
 
@@ -33,7 +34,7 @@ class _addlocationState extends State<addlocation> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text(
+            title: Text(
               'Add Location',
               style: TextStyle(color: Colors.deepPurple),
             ),
@@ -50,12 +51,12 @@ class _addlocationState extends State<addlocation> {
                     setState(() {});
                     Navigator.pop(context);
                   },
-                  leading: const Icon(
+                  leading: Icon(
                     Icons.image_outlined,
                     color: Colors.deepPurple,
                     size: 35,
                   ),
-                  title: const Text(
+                  title: Text(
                     'Gallery',
                     style: TextStyle(color: Colors.deepPurple, fontSize: 20),
                   ),
@@ -82,14 +83,14 @@ class _addlocationState extends State<addlocation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Add Location',
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 27, color: Colors.white),
-        ),
-        backgroundColor: Colors.deepPurple,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Add Location',
+      //     style: TextStyle(
+      //         fontWeight: FontWeight.bold, fontSize: 27, color: Colors.white),
+      //   ),
+      //   backgroundColor: Colors.deepPurple,
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -102,7 +103,7 @@ class _addlocationState extends State<addlocation> {
                     onTap: () {
                       showAlertBox();
                     },
-                    child: const CircleAvatar(
+                    child: CircleAvatar(
                       radius: 35,
                       child: Icon(
                         Icons.place_outlined,
@@ -110,8 +111,8 @@ class _addlocationState extends State<addlocation> {
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
                         // Text('Images Upload',
@@ -121,20 +122,22 @@ class _addlocationState extends State<addlocation> {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SizedBox(
-                    height: 50,
-                    width: 280,
+                  Padding(
+                    padding:  EdgeInsets.symmetric(vertical: 10,horizontal: 37),
                     child: TextField(
                       controller: locationcontroller,
                       keyboardType: TextInputType.text,
-                      style: const TextStyle(color: Colors.deepPurpleAccent),
+                      style:
+                      const TextStyle(color: Colors.deepPurpleAccent),
                       decoration: InputDecoration(
+                        isCollapsed: true,
+                        contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 15),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(9)),
                         hintText: '',
@@ -145,97 +148,100 @@ class _addlocationState extends State<addlocation> {
                   Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(14.0),
-                        child: SizedBox(
-                          height: 50,
-                          width: 280,
-                          child: TextField(
-                            
-                            controller: aboutcontroller,
-                            keyboardType: TextInputType.text,
-                            style:
-                                const TextStyle(color: Colors.deepPurpleAccent),
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(9)),
-                              hintText: '',
-                              labelText: "Aboutus",
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 50,
-                        width: 130,
-                        child: TextFormField(
-                          controller: attractionc1,
-                          keyboardType: TextInputType.text,
-                          style:
-                              const TextStyle(color: Colors.deepPurpleAccent),
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(9)),
-                            hintText: 'Attraction1',
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 17,
-                      ),
-                      SizedBox(
-                        height: 50,
-                        width: 130,
+                        padding:  EdgeInsets.symmetric(vertical: 10,horizontal: 37),
                         child: TextField(
-                          controller: attractionc2,
+                          controller: aboutcontroller,
                           keyboardType: TextInputType.text,
                           style:
                               const TextStyle(color: Colors.deepPurpleAccent),
                           decoration: InputDecoration(
+                            isCollapsed: true,
+                            contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 15),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(9)),
-                            hintText: 'Attraction2',
+                            hintText: '',
+                            labelText: "Aboutus",
                           ),
                         ),
                       ),
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding: EdgeInsets.symmetric(horizontal: 35),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(
-                          height: 50,
-                          width: 130,
-                          child: TextField(
-                            controller: attractionc3,
+                        Flexible(
+                          child: TextFormField(
+                            controller: attractionc1,
                             keyboardType: TextInputType.text,
                             style:
                                 const TextStyle(color: Colors.deepPurpleAccent),
                             decoration: InputDecoration(
+                              isCollapsed: true,
+                              contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(9)),
-                              hintText: 'Attraction3',
+                              hintText: 'Attraction1',
+                              //errorText: '',
                             ),
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 17,
                         ),
+                        Flexible(
+                          child: TextField(
+                            controller: attractionc2,
+                            keyboardType: TextInputType.text,
+                            style:
+                                const TextStyle(color: Colors.deepPurpleAccent),
+                            decoration: InputDecoration(
+                              isCollapsed: true,
+                              contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(9)),
+                              hintText: 'Attraction2',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10,),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 35),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: TextFormField(
+                            controller: attractionc3,
+                            keyboardType: TextInputType.text,
+                            style:
+                            const TextStyle(color: Colors.deepPurpleAccent),
+                            decoration: InputDecoration(
+                              isCollapsed: true,
+                              contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(9)),
+                              hintText: 'Attraction3',
+                              //errorText: '',
+                            ),
+                          ),
+                        ),
                         SizedBox(
-                          height: 50,
-                          width: 130,
+                          width: 17,
+                        ),
+                        Flexible(
                           child: TextField(
                             controller: attractionc4,
                             keyboardType: TextInputType.text,
                             style:
-                                const TextStyle(color: Colors.deepPurpleAccent),
+                            const TextStyle(color: Colors.deepPurpleAccent),
                             decoration: InputDecoration(
+                              isCollapsed: true,
+                              contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(9)),
                               hintText: 'Attraction4',
@@ -249,11 +255,11 @@ class _addlocationState extends State<addlocation> {
                       ? Container(
                           height: 200,
                           width: double.infinity,
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: GridView.builder(
                             itemCount: imageFileList!.length,
                             gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                SliverGridDelegateWithFixedCrossAxisCount(
                                   mainAxisExtent: 150,
                                     crossAxisSpacing: 20,
                                     mainAxisSpacing: 10,
@@ -269,7 +275,7 @@ class _addlocationState extends State<addlocation> {
                               );
                             },
                           ))
-                      : const SizedBox(),
+                      : SizedBox(),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Column(
@@ -278,7 +284,7 @@ class _addlocationState extends State<addlocation> {
                           height: 40,
                           width: 90,
                           child: ElevatedButton(
-                            child: const Text(
+                            child: Text(
                               'Add',
                               style:
                                   TextStyle(fontSize: 20, color: Colors.white),
@@ -291,6 +297,9 @@ class _addlocationState extends State<addlocation> {
                               setState(() {
                                 loading = true;
                               });
+                              if(attractionc1.text.length<=5){
+                                Text('error message');
+                              }
                               for (int i = 0; i < imageFileList!.length; i++) {
                                 String url = await uploadFile(File(imageFileList![i].path));
                                 downloadUrls.add(url);

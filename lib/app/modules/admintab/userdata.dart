@@ -19,8 +19,15 @@ class _userdataState extends State<userdata> {
   Widget build(BuildContext context) {
     return
       Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text("User Details",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+          ),
+          backgroundColor: Colors.deepPurple,
+        ),
         body: Column(
           children: [
+            SizedBox(height: 10,),
             StreamBuilder<QuerySnapshot>(
                 stream: fireStore,
                 builder: (BuildContext contex,
@@ -59,7 +66,7 @@ class _userdataState extends State<userdata> {
                                           snapshot.data!.docs[index]['user_name'].toString(),
                                           style: const TextStyle(
                                               color: Colors.deepPurpleAccent,
-                                              fontSize: 20,
+                                              fontSize: 17,
                                               fontWeight: FontWeight.bold),),
                                         Row(
                                           children: [
@@ -68,7 +75,7 @@ class _userdataState extends State<userdata> {
                                                 .toString(),
                                               style: TextStyle(
                                                   color: Colors.black,
-                                                  fontSize: 17),
+                                                  fontSize: 15),
                                             ),
                                           ],
                                         ),
@@ -81,8 +88,7 @@ class _userdataState extends State<userdata> {
                                   Padding(
                                     padding: EdgeInsets.all(8.0),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment
-                                          .center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text('Flight:-', style: TextStyle(
                                             color: Colors.black,
@@ -100,13 +106,14 @@ class _userdataState extends State<userdata> {
                                             children: [
                                               Text('Country:-', style: TextStyle(
                                                   color: Colors.black,
-                                                  fontSize: 15),),
+                                                  fontSize: 15),
+                                              ),
                                               Text(snapshot.data!
                                                   .docs[index]['destination']['country']
                                                   .toString(),
                                                 style: TextStyle(
                                                     color: Colors.black,
-                                                    fontSize: 15),
+                                                    fontSize: 15,),
                                               ),
                                             ],
                                           ),
