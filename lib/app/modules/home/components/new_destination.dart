@@ -27,7 +27,6 @@ class NewDestination extends GetView<HomeController> {
                 NewDestinationShimmerItem(),
                 NewDestinationShimmerItem(),
                 NewDestinationShimmerItem(),
-               // NewDestinationShimmerItem(),
               ],
             )
           else if (controller.listNewDestination.isEmpty)
@@ -57,6 +56,7 @@ class NewDestination extends GetView<HomeController> {
           verticalSpace(70.w),
         ],
       ),
+
     );
   }
 }

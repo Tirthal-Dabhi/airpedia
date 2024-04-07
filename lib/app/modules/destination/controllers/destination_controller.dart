@@ -119,7 +119,6 @@ class DestinationController extends GetxController {
   Future<void> getDestinationTicket() async {
     try {
       isLoadingDestinationTicket(true);
-
       destinationTicket.value = const DestinationTicketModel();
 
       // Get List Ticket

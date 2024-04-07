@@ -21,6 +21,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
 
   @override
   void initState() {
+    cUtility.getAppLanguage();
     startAnimation();
     checkRoute();
     super.initState();

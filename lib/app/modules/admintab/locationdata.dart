@@ -1,3 +1,4 @@
+import 'package:airpedia/app/modules/admintab/locationdata2.dart';
 import 'package:airpedia/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class _locationdataState extends State<locationdata> {
         GridView.builder(
             itemCount: snapshot.data!.docs.length,
             gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemBuilder: (context, index) =>
                 GestureDetector(
                   onTap: () {
@@ -47,7 +48,7 @@ class _locationdataState extends State<locationdata> {
                       alignment: Alignment.bottomCenter,
                       children: [
                         Padding(
-                          padding:  EdgeInsets.all(8.0),
+                          padding:  const EdgeInsets.all(8.0),
                           child: Flexible(child:
                           Container(
                             decoration: BoxDecoration(
@@ -65,7 +66,7 @@ class _locationdataState extends State<locationdata> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(snapshot.data!.docs[index]['Locationname'].toString(),
-                            style: const TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),
+                            style: const TextStyle(color: Colors.white,fontSize: 19,fontWeight: FontWeight.bold),
                           ),
                         )
                       ],

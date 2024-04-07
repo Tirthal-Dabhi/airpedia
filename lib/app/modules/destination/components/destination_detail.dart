@@ -54,15 +54,15 @@ class DestinationDetail extends StatelessWidget {
             padding: EdgeInsets.zero,
             shrinkWrap: true,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 1,
-              childAspectRatio: 15,
+              crossAxisCount: 2,
+              childAspectRatio: 6,
             ),
             itemCount: data.interests.length,
             itemBuilder: (context, index) {
               return Row(
-                children:[
+                children: [
                   Image.asset(AppAsset.icon('ic_check.png'), width: 15.w),
-                  horizontalSpace(Insets.sm),
+                  horizontalSpace(Insets.xs),
                   Text(
                     data.interests[index].toString().tr,
                     style: TextStyles.desc,

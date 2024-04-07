@@ -8,9 +8,10 @@ class TicketController extends GetxController {
   final cUserInfo = Get.find<UserInfoController>();
 
   final collectionTicket =
-      FirebaseFirestore.instance.collection('ticket_transactions');
+  FirebaseFirestore.instance.collection('ticket_transactions');
 
   RxList<TicketModel> listTicketActive = <TicketModel>[].obs;
+  RxList<String> tickedTransactionIds = <String>[].obs;
 
   RxList<TicketModel> listTicketComplete = <TicketModel>[].obs;
 
@@ -26,20 +27,32 @@ class TicketController extends GetxController {
 
       if (result.docs.isNotEmpty) {
         final data = result.docs.where(
-          (item) => item.data()['user_id'] == cUserInfo.dataUser.value.userId,
+              (item) => item.data()['user_id'] == cUserInfo.dataUser.value.userId,
         );
 
         final ticketActive = data.where((item) {
           return DateTime.fromMillisecondsSinceEpoch(
-                item.data()['departure_schedule'],
-              ).isAfter(DateTime.now()) ==
+            item.data()['departure_schedule'],
+          ).isAfter(DateTime.now()) ==
               true;
         }).toList();
 
+        tickedTransactionIds.value=[];
+        for(int i=0;i<result.docs.length;i++)
+        {
+          if(result.docs[i].data()['user_id']==cUserInfo.dataUser.value.userId)
+          {
+            if(DateTime.fromMillisecondsSinceEpoch(result.docs[i].data()['departure_schedule']).isAfter(DateTime.now())){
+              tickedTransactionIds.add(result.docs[i].id);
+            }
+          }
+        }
+        print(tickedTransactionIds);
+
         final ticketComplete = data.where((item) {
           return DateTime.fromMillisecondsSinceEpoch(
-                item.data()['departure_schedule'],
-              ).isBefore(DateTime.now()) ==
+            item.data()['departure_schedule'],
+          ).isBefore(DateTime.now()) ==
               true;
         }).toList();
 
@@ -48,7 +61,7 @@ class TicketController extends GetxController {
         );
 
         listTicketActive.sort(
-          (a, b) => b.transactionDate.compareTo(a.transactionDate),
+              (a, b) => b.transactionDate.compareTo(a.transactionDate),
         );
 
         listTicketComplete(
@@ -58,7 +71,7 @@ class TicketController extends GetxController {
         );
 
         listTicketComplete.sort(
-          (a, b) => b.transactionDate.compareTo(a.transactionDate),
+              (a, b) => b.transactionDate.compareTo(a.transactionDate),
         );
       }
 

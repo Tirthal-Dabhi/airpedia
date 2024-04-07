@@ -1,6 +1,7 @@
-import 'package:airpedia/app/modules/admintab/combinetab.dart';
+import 'package:airpedia/app/modules/admintab/adminhome.dart';
+
 import 'package:airpedia/app/modules/admintab/setting.dart';
-import 'package:airpedia/app/modules/admintab/ticketall.dart';
+
 import 'package:airpedia/app/modules/admintab/userdata.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,9 @@ class admintab extends StatefulWidget {
 
 class _admintabState extends State<admintab> {
   List pages = [
-    ticketall(),
-    combinetab(),
+    //ticketall(),
+    //combinetab(),
+    adminhome(),
     userdata(),
     asetting(),
   ];
@@ -43,7 +45,7 @@ class _admintabState extends State<admintab> {
         elevation: 0,
         items:  [
           BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.deepPurpleAccent,size: 35),label:'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.location_on_outlined,color: Colors.deepPurpleAccent,size: 35),label:'Location'),
+          //BottomNavigationBarItem(icon: Icon(Icons.location_on_outlined,color: Colors.deepPurpleAccent,size: 35),label:'Location'),
           BottomNavigationBarItem(icon: Icon(Icons.airplane_ticket_outlined,color: Colors.deepPurpleAccent,size: 35),label:'TicketData'),
           BottomNavigationBarItem(icon: Icon(Icons.settings_outlined,color: Colors.deepPurpleAccent,size: 35),label:'Setting'),
         ],

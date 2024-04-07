@@ -1,4 +1,5 @@
 import 'package:airpedia/app/modules/adminlogin/views/adminlogin_view.dart';
+import 'package:airpedia/app/modules/admintab/about%20us.dart';
 import 'package:airpedia/app/modules/home/components/setting_menu.dart';
 import 'package:airpedia/app/modules/login/views/login_view.dart';
 import 'package:airpedia/app/routes/app_pages.dart';
@@ -56,7 +57,9 @@ class _asettingState extends State<asetting> {
                   SizedBox(
                       height: 70,
                       width: 370,
-                      child: SettingMenu(icon: Icons.abc_rounded, label: 'About us', onTap: () {},)),
+                      child: SettingMenu(icon: Icons.abc_rounded, label: 'About us', onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => about()));
+                      },)),
                   SizedBox(
                       height: 70,
                       width: 370,

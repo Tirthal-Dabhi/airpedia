@@ -89,8 +89,6 @@ class AdminloginView extends GetView<AdminloginController> {
                             },
                           );
                         }
-                    // Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
-                    // builder: (context) => admintab()), (Route route) => false)
                     },
                     isLoading: controller.isLoading.value,
                     enabled: controller.isValidForm.value,

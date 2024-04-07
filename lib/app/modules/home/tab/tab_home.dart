@@ -20,6 +20,7 @@ class TabHome extends GetView<HomeController> {
               children: [
                 RecommendedDestination(),
                 NewDestination(),
+
               ],
             ),
           ),

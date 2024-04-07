@@ -23,6 +23,37 @@ class TabSetting extends GetView<SettingController> {
             label: 'editProfile'.tr,
             onTap: () => Get.toNamed(Routes.EDIT_PROFILE),
           ),
+          /*SettingMenu(
+            icon: Icons.lock_open,
+            label: 'changePassword'.tr,
+            onTap: () {
+              showPopUpInfo(
+                title: 'information'.tr,
+                description: 'underDevelopment'.tr,
+              );
+            },
+          ),*/
+         /* SettingMenu(
+            icon: Icons.pin,
+            label: 'changePin'.tr,
+            onTap: () {
+              showPopUpInfo(
+                title: 'information'.tr,
+                description: 'underDevelopment'.tr,
+              );
+            },
+          ),*/
+          /*SettingMenu(
+            icon: Icons.translate,
+            label: 'changeLanguage'.tr,
+            onTap: () {
+              BottomSheetCustom(
+                context: context,
+                initialChildSize: 0.31,
+                child: const SettingLanguageBottomsheet(),
+              ).showData();
+            },
+          ),*/
           SettingMenu(
             icon: Icons.power_settings_new,
             label: 'signOut'.tr,

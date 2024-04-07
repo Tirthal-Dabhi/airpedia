@@ -3,12 +3,14 @@ import 'package:get/get.dart';
 
 class TicketDetailController extends GetxController {
   Rx<TicketModel> data = const TicketModel().obs;
+  RxInt index = 0.obs;
 
   @override
   void onInit() {
     final args = Get.arguments;
     if (args != null) {
       data.value = args['data'];
+      index.value = args['index'];
     }
     super.onInit();
   }

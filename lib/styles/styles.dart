@@ -39,7 +39,7 @@ class TextStyles {
   static TextStyle get title =>
       text.copyWith(fontWeight: FontWeight.w600, fontSize: 16.w);
 
-  static TextStyle get desc => text.copyWith(fontSize: 15.w);
+  static TextStyle get desc => text.copyWith(fontSize: 12.w);
 
   static TextStyle get button =>
       text.copyWith(fontWeight: FontWeight.w600, fontSize: 16.w);

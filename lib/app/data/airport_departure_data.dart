@@ -21,7 +21,7 @@ const List<Map<String, dynamic>> airportDepartureData = [
   },
   {
     'code': 'rknd',
-    'name': 'visakhapatnam airport',
+    'name': 'visakha airport',
     'location': 'visakhapatnam',
   },
   {

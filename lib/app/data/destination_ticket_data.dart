@@ -11,7 +11,7 @@ Map<String, dynamic> destinationTicketData = {
         'airport_departure_name': 'diu airport',
         'airport_departure_location': 'diu',
         'airport_arrival_code': 'rknd',
-        'airport_arrival_name': 'visakhapatnam airport',
+        'airport_arrival_name': 'visakha airport',
         'airport_arrival_location': 'visakhapatnam',
         'airline_code': 'JT-748',
         'airline_name': 'Lion Air',
@@ -195,7 +195,7 @@ Map<String, dynamic> destinationTicketData = {
         'benefit': ['benefit1'.tr],
       }
     ],
-    // departure from goa 
+    // departure from goa
     'trk': [
       {
         'airport_departure_code': 'trk',
@@ -325,7 +325,7 @@ Map<String, dynamic> destinationTicketData = {
         'airport_arrival_name': 'visakhapatnam airport',
         'airport_arrival_location': 'visakhapatnam',
         'airline_code': 'QZ-750',
-        'airline_name': 'Air Asia india',
+        'airline_name': 'Air india',
         'departure_schedule': '07:40',
         'arrival_schedule': '09:55',
         'refundable': true,
@@ -760,7 +760,7 @@ Map<String, dynamic> destinationTicketData = {
         'benefit': ['benefit1'.tr],
       }
     ],
-    // departure from goa 
+    // departure from goa
     'trk': [
       {
         'airport_departure_code': 'trk',
@@ -1478,7 +1478,7 @@ Map<String, dynamic> destinationTicketData = {
         'benefit': ['benefit1'.tr],
       }
     ],
-    // departure from goa 
+    // departure from goa
     'trk': [
       {
         'airport_departure_code': 'trk',
@@ -2757,7 +2757,7 @@ Map<String, dynamic> destinationTicketData = {
         'benefit': ['benefit1'.tr, 'benefit2'.tr, 'benefit3'.tr],
       }
     ],
-    // departure from goa 
+    // departure from goa
     'trk': [
       {
         'airport_departure_code': 'trk',
@@ -4529,7 +4529,7 @@ Map<String, dynamic> destinationTicketData = {
         'benefit': ['benefit1'.tr, 'benefit2'.tr, 'benefit3'.tr],
       }
     ],
-    // departure from goa 
+    // departure from goa
     'trk': [
       {
         'airport_departure_code': 'trk',
@@ -6301,7 +6301,7 @@ Map<String, dynamic> destinationTicketData = {
         'benefit': ['benefit1'.tr, 'benefit2'.tr, 'benefit3'.tr],
       }
     ],
-    // departure from goa 
+    // departure from goa
     'trk': [
       {
         'airport_departure_code': 'trk',
@@ -7801,7 +7801,7 @@ Map<String, dynamic> destinationTicketData = {
         'benefit': ['benefit1'.tr],
       }
     ],
-    // departure from goa 
+    // departure from goa
     'trk': [
       {
         'airport_departure_code': 'trk',
@@ -11211,5 +11211,5 @@ Map<String, dynamic> destinationTicketData = {
     ],
   },
 
-  
+
 };

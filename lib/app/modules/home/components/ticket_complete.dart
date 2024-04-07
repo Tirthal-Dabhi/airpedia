@@ -35,6 +35,7 @@ class TicketComplete extends GetView<TicketController> {
                             Routes.TICKET_DETAIL,
                             arguments: {
                               'data': controller.listTicketComplete[index],
+                              "index":0
                             },
                           ),
                         ),
