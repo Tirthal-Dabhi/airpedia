@@ -66,7 +66,7 @@ class _userdataState extends State<userdata> {
                                           snapshot.data!.docs[index]['user_name'].toString(),
                                           style: const TextStyle(
                                               color: Colors.deepPurpleAccent,
-                                              fontSize: 17,
+                                              fontSize: 19,
                                               fontWeight: FontWeight.bold),),
                                         Row(
                                           children: [

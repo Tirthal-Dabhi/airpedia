@@ -15,7 +15,7 @@ class TabTicket extends GetView<TicketController> {
       onTapTabBarMenu: (index) {},
       listTabBarMenu: [
         TicketTabBarItem(label: 'active'.tr),
-        TicketTabBarItem(label: 'complete'.tr),
+        TicketTabBarItem(label: 'completed'.tr),
       ],
       listTabBarView: const [
         TicketActive(),

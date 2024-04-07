@@ -50,46 +50,7 @@ class OnboardingView extends GetView<OnboardingController> {
               ),
             ],
           ),
-          // Positioned(
-          //   top: 40.w,
-          //   right: 0.w,
-          //   child: Column(
-          //     crossAxisAlignment: CrossAxisAlignment.end,
-          //     children: [
-          //       // Text(
-          //       //   'chooseLanguage'.tr,
-          //       //   style:
-          //       //       TextStyles.text.copyWith(color: AppColor.greyColor2),
-          //       // ),
-          //       verticalSpace(Insets.xs),
-          //       SizedBox(
-          //         width: 72.w,
-          //         child: InputDropdown(
-          //           hintText: '',
-          //           borderColor: Colors.blueGrey[200],
-          //           outlinedBorderColor: Colors.transparent,
-          //           textAlign: TextAlign.center,
-          //           items: [
-          //             ...controller.cUtility.appLanguageOptions.map((item) {
-          //               return DropdownMenuItem<AppLanguageModel>(
-          //                 value: item,
-          //                 child: InputDropdownItem(value: item.language),
-          //               );
-          //             }),
-          //           ],
-          //           selectedItem:
-          //               controller.cUtility.appLanguage.value.language,
-          //           onChanged: (value) {
-          //             if (value != null) {
-          //               final data = value as AppLanguageModel;
-          //               controller.cUtility.changeLanguage(data);
-          //             }
-          //           },
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
+
         ],
       ),
     ));
